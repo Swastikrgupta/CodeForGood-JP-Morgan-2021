@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  {% load static%}
+
+<head>
+    <meta charset="utf-8">
+    <title>User Home Page</title>
+    <!-- goole fonts, bootstrap stylesheets and scripts -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/lang.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+
+    <!-- icons from font awesome -->
+    <script src="https://kit.fontawesome.com/6ec1fc0d3b.js" crossorigin="anonymous"></script>
+<style>
+  #footer
+  {
+      padding: 5% 6% 0;
+      text-align: center;
+      position: relative;
+  }
+  #footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      color: white;
+      text-align: center;
+    }
+  
+  .footer-item
+  {
+      margin: 2% 2%;
+      color: #66CCFF;
+  }
+.btn-change{
+  height: 50px;
+  width: 100px;
+  margin: 20px;
+  box-shadow: 0 0 1px #ccc;
+  -webkit-transition: all 0.5s ease-in-out;
+  border: 0px;
+  color: #fff;
+}
+.btn-change:hover{
+  -webkit-transform: scale(1.1);
+  background: #66CCFF;
+}
+</style>
+</head>
+
+<body>
+  <header>
+
+    <nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="http://samarthya.co/" class="navbar-brand d-flex align-items-center">
+        <img src="http://samarthya.co/wp-content/uploads/2017/08/logo.png" alt="Samarthya" id="logo" data-height-percentage="54" data-actual-width="300" data-actual-height="66">
+      </a>
+  
+    </div>
+  </nav>
+  </header>
+    <div class="translator text-center">
+        <h1>Please choose a language</h1>
+        <div id="google_translate_element"></div>
+        <button onclick="location.href='{%url 'chooseState'%}'" class="btn-change btn-dark"> Next </button>
+
+    </div>
+    
+    <footer id="footer" class="fixed-bottom text-center">
+      <a href="https://wa.me/919226567703"><i class="footer-item fab fa-whatsapp fa-2x"></i></a> 
+      <a href="https://twitter.com/samarthya_org"><i class="footer-item fab fa-twitter fa-2x"></i></a>
+      <a href="https://www.youtube.com/channel/UCFVrfSVSrn8UeuwDpn7AGmw"><i class="footer-item fas fa-envelope fa-2x"></i></a>
+      <!-- <p style="color:#66CCFF">© Copyright 2021 Samarthya</p> -->
+  </footer>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+          new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+        }
+        </script>
+        <script type="text/javascript">
+          (function(d, m){
+              var kommunicateSettings = 
+                  {"appId":"21507e976493825b1108afe7202c7c901","popupWidget":true,"automaticChatOpenOnNavigation":true};
+              var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+              s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+              var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+              window.kommunicate = m; m._globals = kommunicateSettings;
+          })(document, window.kommunicate || {});
+      /* NOTE : Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
+      </script>
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body></html>

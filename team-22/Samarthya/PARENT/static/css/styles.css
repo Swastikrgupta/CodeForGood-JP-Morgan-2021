@@ -1,0 +1,58 @@
+#title
+{
+	background-image: linear-gradient(to bottom right, #FF6633, #FF6633);
+    color: #fff;
+}
+
+.navbar
+{
+    padding: 0;
+}
+
+.navbar-brand
+{
+    font-size: 2.5rem;
+    font-weight: bold;
+    /* color: #fff; */
+}
+
+.nav-item
+{
+    padding: 0 1.5rem;
+}
+
+.nav-link
+{
+    font-size: 1.1rem;
+    /* font-family: "Montserrat-Light"; */
+    color: rgb(255, 255, 255);
+
+}
+
+.form-group
+{
+    padding: 1% 15%;
+}
+
+.pad-state
+{
+    font-size: large;
+    padding: 12% 10% 2%;
+}
+/* .form-select
+{
+    padding: 1% 20%;
+} */
+
+#footer
+{
+    padding: 5% 6% 0;
+    text-align: center;
+    position: relative;
+}
+
+.footer-item
+{
+    margin: 2% 2%;
+    color: #66CCFF;
+}

@@ -1,0 +1,68 @@
+#title
+{
+	background-image: linear-gradient(to bottom right, #FF6633, #FF6633);
+    color: #fff;
+}
+
+.navbar
+{
+    padding: 0;
+}
+
+.navbar-brand
+{
+    font-size: 2.5rem;
+    font-weight: bold;
+    /* color: #fff; */
+}
+
+.nav-item
+{
+    padding: 0 1.5rem;
+}
+
+.nav-link
+{
+    font-size: 1.1rem;
+    /* font-family: "Montserrat-Light"; */
+    color: rgb(255, 255, 255);
+
+}
+
+.form-group
+{
+    padding: 1% 15%;
+}
+
+.pad-state
+{
+    font-size: large;
+    padding: 12% 10% 2%;
+}
+#footer
+{
+    padding: 5% 6% 0;
+    text-align: center;
+    position: relative;
+}
+#footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+.footer-item
+{
+    margin: 2% 2%;
+    color: #66CCFF;
+}
+
+.translator{
+        position: absolute;
+        left: 50%;
+        top: 40%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+}

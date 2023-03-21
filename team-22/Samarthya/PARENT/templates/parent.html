@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+    {% load static%}
+<head>
+    <title>Circulars</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700"
+        rel="stylesheet" type="text/css">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/boosted/5.0.1/boosted.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="{% static 'css/parent.css' %}">
+
+    <style>
+    #myFilter {
+            box-sizing: border-box;
+            width: 50%;
+            padding: 10px;
+            margin-left: 0%;
+        }
+
+        .row.content {
+            height: 670px
+        }
+
+        /* Set gray background color and 100% height */
+        .sidenav {
+            background-color: #262b3e;
+            height: 100%;
+            position: fixed;
+        }
+
+        /* On small screens, set height to 'auto' for the grid */
+        @media screen and (max-width: 767px) {
+            .row.content {
+                height: auto;
+            }
+        }
+
+        body {
+            width: 100%;
+            background-color: #edf2fb;
+
+        }
+
+        .card {
+            border-radius: 6px;
+            background: #264653;
+            width: 100%;
+            height: 50px;
+            padding-top: 10px;
+            margin-left: 5px;
+            margin-top: 10px;
+        }
+
+        .card-header {
+            background: linear-gradient(60deg, #288c6c, #4ea752);
+            border-radius: 6px;
+            position: relative;
+            background: linear-gradient(60deg, #029eb1, #25b1c3);
+            width: 70%;
+            height: 40px;
+            float: left;
+            font-size: 20px;
+            margin-top: -5px;
+            padding-top: 5px;
+            color: white;
+            text-align: center;
+            margin-right: 10px;
+            margin-left: 5px;
+        }
+
+        .card-body{
+            margin-top: -20px;
+        }
+
+
+        li {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #8b92a9;
+        }
+
+        p {
+            font-size: 20px;
+            color: #a9afbbd1;
+        }
+
+        #event1 {
+            background: linear-gradient(60deg, #029eb1, #25b1c3);
+            width: 70px;
+            height: 70px;
+            float: left;
+            font-size: 30px;
+            margin-top: 30px;
+            padding-top: 0px;
+
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
+        }
+
+        #disease:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
+        }
+
+        #disease:active {
+            background: rgb(3, 80, 32);
+        }
+
+
+        li.active>a {
+            background: linear-gradient(60deg, #7b1fa2, #913f9e);
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .nav li:not(.active) a {
+            color: #a9afbbd1;
+        }
+
+        svg {
+            margin-right: 20px;
+            margin-top: 10px;
+            margin-bottom: 0px;
+        }
+
+        .col-sm-10 {
+            margin-left: 16%;
+        }
+
+        .card-body {
+
+            font-size: 20px;
+            color: white;
+
+        }
+
+
+        #speech {
+            width: 150px;
+            margin-left: 0%;
+            margin-bottom: 10px;
+            background: linear-gradient(60deg, #d22824, #da3a36);
+            margin-top: 10px;
+        }
+
+        img {
+            margin: 0;
+            width: 120px;
+            height: 70px
+        }
+
+        #assform {
+            margin-right: -10px;
+            color: black;
+            margin-left: 10px;
+        }
+
+        .e4 {
+            border-radius: 15px;
+            margin-bottom: 50px;
+            background: #fffffc;
+            margin-left: 20px;
+            width: 100%;
+            height: 100%;
+            margin-top: 10%;
+            padding-left: 20px;
+            padding-top: 10px;
+            color: #a9afbbd1;
+            padding-bottom: 10px;
+            border-style: solid;
+            border-color: coral;
+        }
+
+        .card-headerfrm {
+            margin: 0px 15px 0;
+            background-color: #264653;
+            height: 100%;
+            width: 80%;
+            border-radius: 6px;
+            position: relative;
+            margin-top: -50px;
+            font-weight: bold;
+            font-size: 45px;
+            color: white;
+            padding-top: 5px;
+            text-align: center;
+            margin-left: 7%;
+            margin-bottom: 20px;
+            padding-left: 10px;
+        }
+
+        button {
+            background-color: #264653;
+            color: white;
+            margin-top: -30px;
+            margin-right: 10px;
+            border-radius: 5px;
+            height: 30px;
+            border: none;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+
+        <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="http://samarthya.co/" class="navbar-brand d-flex align-items-center">
+            <img src="http://samarthya.co/wp-content/uploads/2017/08/logo.png" alt="Samarthya" id="logo" data-height-percentage="54" data-actual-width="300" data-actual-height="66">
+          </a>
+      
+        </div>
+      </nav>
+      </header>
+      <div class="container">
+          <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+                <h1 style="font-weight:bold; color:#264653;text-align:center;margin-top:10px;margin-bottom:20px;">CIRCULARS</h1>
+                    <div class="row" style="margin-bottom:15px;padding-bottom:15px" id="myItems">
+                    <div class="col-6">
+                        <input type="text" id="myFilter" class="form-control" onkeyup="myFunction()"
+                            placeholder="Search for names..">
+                    </div>
+                    <div class="col-6">
+                        <button type="button" id="speech" onclick="runSpeechRecognition()">Speech to Text</button>&nbsp;<span id="action" style="color:red;"></span>
+                    </div>
+                        <div>
+        
+                            <button type="button" id="tags" value="Scholarship" onclick="tagFunction('Scholarship')">Scholarship</button>
+                            <button type="button" id="tags" value="Fee" onclick="tagFunction('Fee')">Fee</button>
+                            <button type="button" id="tags" value="Mid-day Meal" onclick="tagFunction('Mid-day Meal')">Mid-day Meal</button>
+                            <button type="button" id="tags" value="Textbook" onclick="tagFunction('Textbook')">Textbook</button>
+                            <button type="button" id="tags" value="Subsidiaries" onclick="tagFunction('Subsidiaries')">Subsidiaries</button>
+                            <button type="button" id="tags" value="Scholarship" onclick="tagFunction('Admission')">Admission</button>
+                            <button type="button" id="tags" value="Safety" onclick="tagFunction('Safety')">Safety</button>
+        
+                        </div>
+        
+                        {%for name,type, path in combi%}
+                        <div class="col-sm-11 ">
+                             <form>
+                                <div class="col-10">
+                                    <div class="card" id="card1">
+                                        <a href="{% url 'openpdf' path=path%}" style="text-decoration:none;">
+                                        <div class="card-header ">{{name}}</div>
+                                        <div class="card-body " id="card-b"> <span style="center"> {{type}}</div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        {%endfor%}
+        
+                        </div>
+                        <div class="col-sm-1 "></div>
+                    </div>
+            <div class="col-sm-2">
+        
+                </div>   
+            </div>  
+          </div>
+      </div>
+   
+      <footer id="footer "  class="fixed-bottom text-center">
+        <a href="https://wa.me/919226567703"><i class="footer-item fab fa-whatsapp fa-2x"></i></a> 
+   
+        <a href="https://twitter.com/samarthya_org"><i class="footer-item fab fa-twitter fa-2x"></i></a>
+        <a href="https://www.youtube.com/channel/UCFVrfSVSrn8UeuwDpn7AGmw"><i class="footer-item fas fa-envelope fa-2x"></i></a>
+          <!-- <p>© Copyright 2021 Samarthya</p> -->
+      </footer>
+    <script>
+    function myFunction() {
+        var input, filter, cards, cardContainer, h5, title, i;
+        input = document.getElementById("myFilter");
+        filter = input.value.toUpperCase();
+        cardContainer = document.getElementById("myItems");
+        cards = cardContainer.getElementsByClassName("card");
+        for (i = 0; i < cards.length; i++) {
+            title = cards[i].querySelector(".card-header ");
+            if (title.innerText.toUpperCase().indexOf(filter) > -1) {
+                cards[i].style.display = "";
+            } else {
+                cards[i].style.display = "none";
+            }
+        }
+    }
+
+    function tagFunction(tag) {
+        var input, filter, cards, cardContainer, h5, title, i;
+        input = tag;
+        cardContainer = document.getElementById("myItems");
+        cards = cardContainer.getElementsByClassName("card");
+        for (i = 0; i < cards.length; i++) {
+            title = cards[i].querySelector(".card-body ");
+            if (title.innerText.indexOf(input) > -1) {
+                cards[i].style.display = "";
+            } else {
+                cards[i].style.display = "none";
+            }
+        }
+    }
+    </script>
+
+    <script type="text/javascript">
+
+
+
+                function runSpeechRecognition() {
+                    // get output div reference
+
+                    var action = document.getElementById("action");
+                    // new speech recognition object
+                    var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
+                    var recognition = new SpeechRecognition();
+
+                    // This runs when the speech recognition service starts
+                    recognition.onstart = function () {
+                        action.innerHTML = "<small>listening, please speak...</small>";
+                    };
+
+                    recognition.onspeechend = function () {
+                        action.innerHTML = "<small>stopped listening, hope you are done...</small>";
+                        recognition.stop();
+                    };
+
+                    // This runs when the speech recognition service returns result
+                    recognition.onresult = function (event) {
+                        var transcript = event.results[0][0].transcript;
+                        var confidence = event.results[0][0].confidence;
+                        var input, filter, cards, cardContainer, title, i;
+                        action.innerHTML = "<small>" + transcript + "</small>";
+                        input = event.results[0][0].transcript;
+                        filter = input.toUpperCase();
+                        cardContainer = document.getElementById("myItems");
+                        cards = cardContainer.getElementsByClassName("card");
+                        for (i = 0; i < cards.length; i++) {
+                            title = cards[i].querySelector(".card-header");
+                            if (title.innerText.toUpperCase().indexOf(filter) > -1) {
+                                cards[i].style.display = "";
+                            } else {
+                                cards[i].style.display = "none";
+                            }
+                        }
+                    };
+                    recognition.start();
+
+                };
+    </script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+          new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+        }
+        </script>
+        
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        
+        <script type="text/javascript">
+            (function(d, m){
+                var kommunicateSettings = 
+                    {"appId":"21507e976493825b1108afe7202c7c901","popupWidget":true,"automaticChatOpenOnNavigation":true};
+                var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+                s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+                var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+                window.kommunicate = m; m._globals = kommunicateSettings;
+            })(document, window.kommunicate || {});
+        /* NOTE : Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
+        </script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+
+</body>
+
+</html>

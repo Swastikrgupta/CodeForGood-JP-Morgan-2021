@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+    crossorigin="anonymous"></script>
+    <style>
+        #footer
+      {
+          padding: 5% 6% 0;
+          text-align: center;
+          position: relative;
+      }
+      #footer {
+          position: fixed;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          color: white;
+          text-align: center;
+        }
+      
+      .footer-item
+      {
+          margin: 2% 2%;
+          color: #66CCFF;
+      }
+      </style>
+</head>
+<body>
+    <header>
+
+        <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="http://samarthya.co/" class="navbar-brand d-flex align-items-center">
+            <img src="http://samarthya.co/wp-content/uploads/2017/08/logo.png" alt="Samarthya" id="logo" data-height-percentage="54" data-actual-width="300" data-actual-height="66">
+          </a>
+      
+        </div>
+      </nav>
+      </header>
+    <h3 style="margin-top: 20px;text-align:center">New Delhi Muncipal Council</h3>
+    <div class="container">
+        <table class="table table-striped table-bordered thead-light">
+            <tr>
+                <th>
+                    Announcement
+                </th>
+                <th>
+                    Link
+                </th>
+            </tr>
+            {% for k,v in zip1 %}
+            <tr>
+                <td>{{k}}</td>
+                <td><a href="{{v}}">link</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+        <br>
+    <h3 style="margin-top: 20px;text-align:center">EDMC</h3>
+        <table class="table table-striped table-bordered thead-light">
+
+            <tr>
+                <th>
+                    Announcement
+                </th>
+                <th>
+                    Link
+                </th>
+            </tr>
+            {% for k,v in zip2 %}
+            <tr>
+                <td>{{k}}</td>
+                <td><a href="{{v}}">Link</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+
+    </div>
+ 
+
+    <footer id="footer" class="fixed-bottom mt-5 mb-1">
+
+        <a href="https://wa.me/919226567703"><i class="footer-item fab fa-whatsapp fa-2x"></i></a> 
+        <a href="https://twitter.com/samarthya_org"><i class="footer-item fab fa-twitter fa-2x"></i></a>
+        <a href="https://www.youtube.com/channel/UCFVrfSVSrn8UeuwDpn7AGmw"><i class="footer-item fas fa-envelope fa-2x"></i></a>
+        <!-- <p>© Copyright 2021 Samarthya</p> -->
+    </footer>
+</body>
+</html>

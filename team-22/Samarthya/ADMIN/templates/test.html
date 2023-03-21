@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Trying to open docs</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  #footer
+{
+    padding: 5% 6% 0;
+    text-align: center;
+    position: relative;
+}
+#footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+  }
+
+.footer-item
+{
+    margin: 2% 2%;
+    color: #66CCFF;
+}
+.btn-change{
+  height: 50px;
+  width: 175px;
+  margin: 20px;
+  box-shadow: 0 0 1px #ccc;
+  -webkit-transition: all 0.5s ease-in-out;
+  border: 0px;
+  color: #fff;
+}
+.btn-change:hover{
+  -webkit-transform: scale(1.1);
+  background: #66CCFF;
+}
+</style>
+  </head>
+  <body>
+    <header>
+
+      <nav class="navbar navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="http://samarthya.co/" class="navbar-brand d-flex align-items-center">
+          <img src="http://samarthya.co/wp-content/uploads/2017/08/logo.png" alt="Samarthya" id="logo" data-height-percentage="54" data-actual-width="300" data-actual-height="66">
+        </a>
+    
+      </div>
+    </nav>
+    </header>
+    <style>
+  #footer
+{
+    padding: 5% 6% 0;
+    text-align: center;
+    position: relative;
+}
+#footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+  }
+
+.footer-item
+{
+    margin: 2% 2%;
+    color: #66CCFF;
+}
+</style>
+    <h1 style="text-align: center;color:black;margin-top:10px">Start listening</h1>
+    <form action="{%url 'read_pdf'%}" method="post" style="text-align:center">
+    {%csrf_token%}
+        <input type="hidden" name="path" value="{{path}}">
+        <input type="submit" name="buttonstart" class="btn-change btn-dark" value="Start Reading">
+        <input type="submit" name="buttonstart" class="btn-change btn-dark" value="Stop Reading">
+        <input type="submit" name="buttonstart" class="btn-change btn-dark" value="Start Reading(Hindi)">
+        <input type="submit" name="buttonstart" class="btn-change btn-dark" value="Stop Reading(Hindi)">
+    </form>
+    <br><br><br>
+    <iframe src="{% static 'pdf/abcd.pdf' %}" width="100%" height="500px">
+    </iframe>
+    <footer id="footer" class="fixed-bottom">
+      <a href="https://wa.me/919226567703"><i class="footer-item fab fa-whatsapp fa-2x"></i></a> 
+      <a href="https://twitter.com/samarthya_org"><i class="footer-item fab fa-twitter fa-2x"></i></a>
+      <a href="https://www.youtube.com/channel/UCFVrfSVSrn8UeuwDpn7AGmw"><i class="footer-item fas fa-envelope fa-2x"></i></a>
+      <!-- <p>© Copyright 2021 Samarthya</p> -->
+  </footer>
+    <script type="text/javascript">
+      (function(d, m){
+          var kommunicateSettings = 
+              {"appId":"21507e976493825b1108afe7202c7c901","popupWidget":true,"automaticChatOpenOnNavigation":true};
+          var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+          s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+          var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+          window.kommunicate = m; m._globals = kommunicateSettings;
+      })(document, window.kommunicate || {});
+  /* NOTE : Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
+  </script>
+  </body>
+</html>
